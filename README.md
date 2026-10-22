@@ -56,3 +56,8 @@ In modern Security Operations Centers (SOC), alert fatigue and high-volume Level
 |  /var/ossec/logs/        |
 |  integrator.log          |  <-- Logged for SOC Analyst Review / Active Response
 +--------------------------+
+
+## 🎯 Target Threat Vector: PHP2Shell RCE
+* **Attack Pattern:** Exploitation attempts targeting live web applications via CGI parameters (e.g., `?-d+allow_url_include=1+auto_prepend_file=php://input`).
+* **Wazuh Detection Rule (`ID: 100050`):** Automatically matches malicious PHP execution vectors and escalates alerts to Level 10 severity.
+* **Groq LPU Autonomous Triage:** Sub-second analysis of the captured HTTP full logs, instantly classifying threat levels and suggesting mitigation steps.
