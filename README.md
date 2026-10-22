@@ -1,4 +1,4 @@
-# 🛡️ Autonomous SOC Triage Engine: Wazuh SIEM + Groq LPU Integration
+# 🛡️ Autonomous SOC Triage Engine: Wazuh SIEM + Groq LPU Integration +  Target Threat Vector ( PHP2Shell RCE )
 
 An autonomous, ultra-low-latency SOC Triage and Threat Analysis automation built for **Wazuh SIEM**. This integration bridges enterprise SIEM detection with **Groq LPU (Language Processing Unit)** hardware acceleration to analyze high-severity alerts in sub-second speed.
 
