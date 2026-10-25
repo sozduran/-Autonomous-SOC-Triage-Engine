@@ -18,11 +18,11 @@ rapid automated triage. Traditional approaches using local LLM models
 (e.g., Ollama running on local CPU/GPU) introduce significant bottlenecks:
 
 * **The Problem:** Local CPU-bound LLMs take **30 to 120 seconds** per alert,
-*  causing `wazuh-integratord` timeouts, process queue backups, and server resource exhaustion.
+  causing `wazuh-integratord` timeouts, process queue backups, and server resource exhaustion.
 * **The Solution:** Offloading contextual triage to Groq's custom LPU architecture
-* via an event-driven Python integration script.
+ via an event-driven Python integration script.
 * **The Result:** Reduced triage response time from **~60 seconds to ~250 milliseconds** while bypassing
-*  WAF restrictions through custom headers and payload sanitization.
+  WAF restrictions through custom headers and payload sanitization.
 
 ---
 
