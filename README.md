@@ -1,6 +1,8 @@
 # 🛡️ Autonomous SOC Triage Engine: Wazuh SIEM + Groq LPU Integration +  Target Threat Vector ( PHP2Shell RCE )
 
-An autonomous, ultra-low-latency SOC Triage and Threat Analysis automation built for **Wazuh SIEM**. This integration bridges enterprise SIEM detection with **Groq LPU (Language Processing Unit)** hardware acceleration to analyze high-severity alerts in sub-second speed.
+An autonomous, ultra-low-latency SOC Triage and Threat Analysis automation built for **Wazuh SIEM**.
+This integration bridges enterprise SIEM detection with **Groq LPU 
+(Language Processing Unit)** hardware acceleration to analyze high-severity alerts in sub-second speed.
 
 ![Wazuh](https://img.shields.io/badge/Wazuh-4.9.0-blue?style=for-the-badge&logo=wazuh)
 ![Groq](https://img.shields.io/badge/Groq-LPU_Accelerated-orange?style=for-the-badge)
@@ -11,11 +13,16 @@ An autonomous, ultra-low-latency SOC Triage and Threat Analysis automation built
 
 ## 📌 Executive Summary & Core Engineering Breakthrough
 
-In modern Security Operations Centers (SOC), alert fatigue and high-volume Level 7+ events require rapid automated triage. Traditional approaches using local LLM models (e.g., Ollama running on local CPU/GPU) introduce significant bottlenecks:
+In modern Security Operations Centers (SOC), alert fatigue and high-volume Level 7+ events require 
+rapid automated triage. Traditional approaches using local LLM models
+(e.g., Ollama running on local CPU/GPU) introduce significant bottlenecks:
 
-* **The Problem:** Local CPU-bound LLMs take **30 to 120 seconds** per alert, causing `wazuh-integratord` timeouts, process queue backups, and server resource exhaustion.
-* **The Solution:** Offloading contextual triage to Groq's custom LPU architecture via an event-driven Python integration script.
-* **The Result:** Reduced triage response time from **~60 seconds to ~250 milliseconds** while bypassing WAF restrictions through custom headers and payload sanitization.
+* **The Problem:** Local CPU-bound LLMs take **30 to 120 seconds** per alert,
+*  causing `wazuh-integratord` timeouts, process queue backups, and server resource exhaustion.
+* **The Solution:** Offloading contextual triage to Groq's custom LPU architecture
+* via an event-driven Python integration script.
+* **The Result:** Reduced triage response time from **~60 seconds to ~250 milliseconds** while bypassing
+*  WAF restrictions through custom headers and payload sanitization.
 
 ---
 
@@ -58,6 +65,9 @@ In modern Security Operations Centers (SOC), alert fatigue and high-volume Level
 +--------------------------+
 
 ## 🎯 Target Threat Vector: PHP2Shell RCE
-* **Attack Pattern:** Exploitation attempts targeting live web applications via CGI parameters (e.g., `?-d+allow_url_include=1+auto_prepend_file=php://input`).
-* **Wazuh Detection Rule (`ID: 100050`):** Automatically matches malicious PHP execution vectors and escalates alerts to Level 10 severity.
-* **Groq LPU Autonomous Triage:** Sub-second analysis of the captured HTTP full logs, instantly classifying threat levels and suggesting mitigation steps.
+* **Attack Pattern:** Exploitation attempts targeting live web applications
+via CGI parameters (e.g., `?-d+allow_url_include=1+auto_prepend_file=php://input`).
+* **Wazuh Detection Rule (`ID: 100050`):** Automatically matches malicious
+PHP execution vectors and escalates alerts to Level 10 severity.
+* **Groq LPU Autonomous Triage:** Sub-second analysis of the captured
+ HTTP full logs, instantly classifying threat levels and suggesting mitigation steps.
